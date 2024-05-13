@@ -1,7 +1,7 @@
 package com.preperad.to.interview.algoritm.algoritms;
 
 import com.preperad.to.interview.algoritm.aopFunctional.UsageLogging;
-import com.preperad.to.interview.algoritm.cons.AlgoritmType;
+import com.preperad.to.interview.algoritm.cons.AlgorithmType;
 import com.preperad.to.interview.algoritm.dto.algorithmsDto.PalindromeRequest;
 import com.preperad.to.interview.algoritm.dto.algorithmsDto.PalindromeResponse;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
-@Service(value = AlgoritmType.PalindromeNumber)
+@Service(value = AlgorithmType.palindromeNumber)
 public class AlgorithmPalindromeNumber implements AlgorithmsCalculator<PalindromeRequest, PalindromeResponse> {
     @UsageLogging
     @Override

@@ -6,10 +6,8 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class TwoSumRequest extends Request {
-    public static final String DISCRIMINATOR = AlgorithmType.twoSum;
+public class LongestCommonPrefixRequest extends Request{
+    public static  final String DISCRIMINATOR = AlgorithmType.longestCommonPrefix;
 
-    private List<Integer> numsList;
-
-    private Integer target;
+    private List<String> strs;
 }

@@ -1,7 +1,7 @@
 package com.preperad.to.interview.algoritm.algoritms;
 
 import com.preperad.to.interview.algoritm.aopFunctional.UsageLogging;
-import com.preperad.to.interview.algoritm.cons.AlgoritmType;
+import com.preperad.to.interview.algoritm.cons.AlgorithmType;
 import com.preperad.to.interview.algoritm.dto.algorithmsDto.TwoSumRequest;
 import com.preperad.to.interview.algoritm.dto.algorithmsDto.TwoSumResponse;
 import org.springframework.stereotype.Service;
@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Service(value = AlgoritmType.twoSum)
+@Service(value = AlgorithmType.twoSum)
 public class AlgorithmTwoSum implements AlgorithmsCalculator<TwoSumRequest, TwoSumResponse> {
     @UsageLogging
     @Override
