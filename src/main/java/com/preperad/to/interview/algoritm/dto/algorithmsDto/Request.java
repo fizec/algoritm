@@ -12,7 +12,8 @@ import lombok.Data;
 @JsonSubTypes({
         @JsonSubTypes.Type(value = TwoSumRequest.class, name = TwoSumRequest.DISCRIMINATOR),
         @JsonSubTypes.Type(value = PalindromeRequest.class, name = PalindromeRequest.DISCRIMINATOR),
-        @JsonSubTypes.Type(value = LongestCommonPrefixRequest.class, name = LongestCommonPrefixRequest.DISCRIMINATOR)
+        @JsonSubTypes.Type(value = LongestCommonPrefixRequest.class, name = LongestCommonPrefixRequest.DISCRIMINATOR),
+        @JsonSubTypes.Type(value = MergeTwoSortedListsRequest.class, name = MergeTwoSortedListsRequest.DISCRIMINATOR)
 })
 @Data
 public abstract class Request {
