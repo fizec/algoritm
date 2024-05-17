@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Ramil_Kurbanov
+      changes:
+        - createTable:
+            tableName: usage_log_table
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: algorithm
+                  type: varchar(255)
+              - column:
+                  name: customer
+                  type: varchar(255)
+              - column:
+                  name: date
+                  type: datetime

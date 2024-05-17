@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: Ramil_Kurbanov
+      changes:
+        - createTable:
+            tableName: education
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: degree
+                  type: varchar(255)
+              - column:
+                  name: start_studies
+                  type: datetime
+              - column:
+                  name: end_studies
+                  type: datetime
+              - column:
+                  name: id_user
+                  type: BIGINT
+              - column:
+                  name: id_college
+                  type: BIGINT

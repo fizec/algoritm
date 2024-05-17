@@ -1,25 +1,9 @@
 databaseChangeLog:
-  - logicalFilePath: db/changelog/db.changelog-lesson1.yaml
-  - changeSet:
-      id: 1
-      author: Ramil_Kurbanov
-      changes:
-        - createTable:
-            tableName: usage_log_table
-            columns:
-              - column:
-                  name: id
-                  type: BIGINT
-                  autoIncrement: true
-                  constraints:
-                    primaryKey: true
-                    nullable: false
-              - column:
-                  name: algorithm
-                  type: varchar(255)
-              - column:
-                  name: customer
-                  type: varchar(255)
-              - column:
-                  name: date
-                  type: datetime
+  - include:
+      file: db/changelog/2024-05-16--01-create-table.yaml
+  - include:
+      file: db/changelog/2024-05-16--02-create-table.yaml
+  - include:
+      file: db/changelog/2024-05-16--03-create-table.yaml
+  - include:
+      file: db/changelog/2024-05-16--04-create-table.yaml

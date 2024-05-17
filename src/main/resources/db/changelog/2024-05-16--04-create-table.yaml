@@ -1,0 +1,21 @@
+databaseChangeLog:
+  - changeSet:
+      id: 4
+      author: Ramil_Kurbanov
+      changes:
+        - createTable:
+            tableName: college
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: city
+                  type: varchar(255)
