@@ -1,6 +1,7 @@
 package com.preperad.to.interview.algoritm.controllers;
 
 import com.preperad.to.interview.algoritm.algoritms.AlgorithmsCalculator;
+import com.preperad.to.interview.algoritm.algoritms.SubtractionService;
 import com.preperad.to.interview.algoritm.dto.algorithmsDto.Request;
 import com.preperad.to.interview.algoritm.dto.algorithmsDto.Response;
 import lombok.AllArgsConstructor;
@@ -22,12 +23,12 @@ public class AlgorithmsController {
     @Autowired
     Map<String, AlgorithmsCalculator> serviceMap;
 
+    @Autowired
+    SubtractionService service;
+
     @PostMapping(value = "/solve")
-    public ResponseEntity<Response> subtractionController(@RequestBody Request request) {
-        if (serviceMap.containsKey(request.getAlgorithmType())) {
-            return new ResponseEntity<>(serviceMap.get(request.getAlgorithmType()).solve(request), HttpStatus.OK);
-        }
-        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    public ResponseEntity<Response> subtractionController(@RequestBody Request request) throws Exception {
+        return new ResponseEntity<>(service.subtraction(request), HttpStatus.OK);
     }
 
 }
