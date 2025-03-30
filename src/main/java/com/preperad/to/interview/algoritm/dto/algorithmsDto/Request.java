@@ -2,6 +2,7 @@ package com.preperad.to.interview.algoritm.dto.algorithmsDto;
 
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 
 @JsonTypeInfo(
@@ -16,8 +17,12 @@ import lombok.Data;
         @JsonSubTypes.Type(value = MergeTwoSortedListsRequest.class, name = MergeTwoSortedListsRequest.DISCRIMINATOR)
 })
 @Data
+@Schema(description = "Базовый класс для запроса пользователя", discriminatorProperty = "type")
 public abstract class Request {
+    @Schema(description = "User name", required = true)
     public static final String DISCRIMINATOR = "type";
+    @Schema(description = "Type request", required = true)
     private String customer;
+    @Schema(description = "algorithmType", required = true)
     private String algorithmType;
 }
