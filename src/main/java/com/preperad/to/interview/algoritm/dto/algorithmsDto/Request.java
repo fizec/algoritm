@@ -3,6 +3,8 @@ package com.preperad.to.interview.algoritm.dto.algorithmsDto;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Data;
 
 @JsonTypeInfo(
@@ -20,9 +22,12 @@ import lombok.Data;
 @Schema(description = "Базовый класс для запроса пользователя", discriminatorProperty = "type")
 public abstract class Request {
     @Schema(description = "User name", required = true)
+    @NotEmpty(message = "Type cannot be empty")
     public static final String DISCRIMINATOR = "type";
     @Schema(description = "Type request", required = true)
+    @NotEmpty(message = "Customer name cannot be empty")
     private String customer;
     @Schema(description = "algorithmType", required = true)
+    @NotEmpty(message = "Algorithm type cannot be empty")
     private String algorithmType;
 }

@@ -5,6 +5,7 @@ import com.preperad.to.interview.algoritm.dto.algorithmsDto.*;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,7 @@ public class AlgorithmsController {
             summary = "Получить тип использованного алгоритма и данные для обработки",
             description = "Возвращает результат и информацию о пользователе и дату"
     )
-    public ResponseEntity<Response> subtractionController(@RequestBody Request request) throws Exception {
+    public ResponseEntity<Response> subtractionController(@Valid @RequestBody Request request) throws Exception {
         return new ResponseEntity<>(service.subtraction(request), HttpStatus.OK);
     }
 
